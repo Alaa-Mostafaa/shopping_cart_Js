@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>E-commerce | Home </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/index.css">
+        <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+    </head>
+    <body>
+  
+        <!-- Message -->
+       <div id="success-message">
+        <section  class="position-fixed d-flex justify-content-center align-items-center text-center bg-opacity-75 bg-dark w-100 z-3" style="height: 100vh;width: 100vh;">
+            <div id="message-content" class="shadow-lg bg-white p-5 rounded-3">
+              <i class="fa-regular fa-circle-check fa-fade fs-1"></i>
+              <p class="fw-bold fs-2 py-3">Product is added successfully to the cart </p>
+              <button onclick="goToCart()" class="btn btn-dark">OK</button>
+            </div>
+          </section>
+       </div>
+
+        <!-- First section -->
+         <section id="first_section">
+            <!-- Navigation bar -->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container">
+                  <a class="navbar-brand fs-1" href="index.html">SHOP.CO</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+<!--                         <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                          </form>  -->
+                    </ul>
+                    <a href="signup.html" class="btn btn-dark me-2 " id="signup">Sign Up</a>
+                    <a href="login.html" class="btn btn-outline-dark" id="login">Login</a>
+                    <a class="btn btn-dark" id="logout" onclick="logout()">Logout</a>
+
+
+                  </div>
+                </div>
+              </nav>
+            <!-- End of Navigation bar -->
+           <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 d-flex  align-items-center">
+                    <div class="p-5">
+                        <h1>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
+                        <p class="text-muted py-3 lh-lg">Browse through our diverse range of meticulously crafted garments, 
+                            designed to bring out your individuality and cater to your sense of style.</p>
+                            <button class="btn btn-dark">Shop now</button>
+                    </div>
+
+                </div>
+                <div class="col-md-6" id="home-photo">
+                    <img src="assets/images/home.png" class="w-100"/>
+
+                </div>
+
+            </div>
+           </div>
+            </div>
+         </section>
+        <!-- End of First section -->
+
+      
+        <!-- Products section -->
+         <section class="my-5">
+            <div class="container">
+                <h2 class="text-center py-5 fs-1">NEW ARRIVALS</h2>
+                <div class="row g-3" id="products">
+                </div>
+            </div>
+         </section>
+        <!-- End of Products section -->
+
+        <!--Footer-->
+        <footer>
+            <div class="container py-5">
+                <div class="row pt-4 gy-5">
+                    <div class="col-md-4 col-sm-12">
+                        <h1>SHOP.CO</h1>
+                        <p class="text-muted py-3 lh-lg">We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
+                        <div id="social_media_icons">
+                            <i class="fa-brands fa-twitter bg-white p-2 rounded-5"></i>
+                            <i class="fa-brands fa-facebook-f bg-white p-2 rounded-5 mx-1"></i>
+                            <i class="fa-brands fa-instagram bg-white p-2 rounded-5"></i>
+                            <i class="fa-brands fa-github bg-white p-2 rounded-5 ms-1"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-12 ">
+                        <h4>COMPANY</h4>
+                        <ul class="list-unstyled text-muted mt-4">
+                            <li>About</li>
+                            <li class="py-4">Features</li>
+                            <li>Works</li>
+                            <li class="py-4">Career</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-12 ">
+                        <h4>HELP</h4>
+                        <ul class="list-unstyled text-muted mt-4">
+                            <li>Customer Support</li>
+                            <li class="py-4">Delivery Details</li>
+                            <li>Terms & Conditions</li>
+                            <li class="py-4">Privacy Policy</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-2 col-sm-12 ">
+                        <h4>FAQ</h4>
+                        <ul class="list-unstyled text-muted mt-4">
+                            <li>Account</li>
+                            <li class="py-4">Manage Delieveries</li>
+                            <li>Orders</li>
+                            <li class="py-4">Payments</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-2 col-sm-12 ">
+                        <h4>RESOURCES</h4>
+                        <ul class="list-unstyled text-muted mt-4">
+                            <li>Free eBooks</li>
+                            <li class="py-4">Development Tutorial</li>
+                            <li>How to - Blog</li>
+                            <li class="py-4">Youtube Playlist</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+        <!--End of Footer-->
+
+
+        
+        <script src="https://kit.fontawesome.com/0c6829628d.js" crossorigin="anonymous"></script>
+        <script src="assets/js/bootstrap.bundle.min.js" async defer></script>
+        <script src="assets/js/Auth.js" async defer></script>
+        <script src="assets/js/index.js" async defer type="module"></script>
+        <script src="assets/js/cart.js" async defer type="module"></script>
+
+
+<script>
+    let i;
+    function add(index){
+        document.getElementById('success-message').style.display='flex'
+        i=index;
+    }
+
+    function goToCart(){
+        document.getElementById('success-message').style.display='none'
+        window.location.assign(`cart.html?${i}`)
+    }
+
+</script>
+
+    </body>
+</html>
