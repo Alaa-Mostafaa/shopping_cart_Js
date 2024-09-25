@@ -80,6 +80,10 @@ function logout() {
   window.location.assign("login.html");
 }
 
+document.getElementById('logout').addEventListener("click",function(){
+  logout()
+})
+
 // This function is used to show welcome message after the used is logged in then redirect him to home page
 function showMessage() {
   // Show the message

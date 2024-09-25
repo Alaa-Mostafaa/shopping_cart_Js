@@ -129,3 +129,6 @@ function AddTocart(product) {
 document.getElementById("close").addEventListener("click", () => {
   document.getElementById("success-message").style.display = "none";
 });
+
+
+
