@@ -1,5 +1,14 @@
+const user = localStorage.getItem("user_email");
 
-/* Array for products */
+var cart;
+
+if (localStorage.getItem("cart") == null) {
+  cart = [];
+} else {
+  cart = JSON.parse(localStorage.getItem("cart"));
+}
+
+/* Constant Array for products */
 
 const products = [
   {
@@ -61,10 +70,9 @@ const products = [
 ];
 localStorage.setItem("products", JSON.stringify(products));
 
-
-// Show all products in home page 
+// Show all products in home page
 function displayInHome() {
-  var product="";
+  var product = "";
 
   for (var i = 0; i < products.length; i++) {
     product += `
@@ -78,7 +86,7 @@ function displayInHome() {
                               <p class="card-text text-justify text-muted py-2">${products[i].description}</p>
                               <p class="fw-bold">${products[i].price} EGP</p>
                               <div class="text-center">
-                                <button class="btn btn-dark" onclick="add(${i})"><i class="fa-solid fa-cart-shopping pe-2"></i> Add to Cart </button>                                
+                                <button class="btn btn-dark cart" id="${i}"><i class="fa-solid fa-cart-shopping pe-2"></i> Add to Cart </button>                                
                               </div>
                             </div>
                           </div>
@@ -90,21 +98,34 @@ function displayInHome() {
   document.getElementById("products").innerHTML = product;
 }
 
+// Call the function to display products in home page
+displayInHome();
 
-displayInHome()
+// Add To cart buttons and add event listener to call AddTocart function
+const btns = document.querySelectorAll(".cart");
+btns.forEach((ele) => {
+  ele.addEventListener("click", function () {
+    let cartProduct = products[ele.id];
+    AddTocart(cartProduct);
+  });
+});
 
-function addToCart(){
-  console.log("aaa")
+// This function is used to add new product  in the cart
+function AddTocart(product) {
+  let product_cart = {
+    name: product.Productname,
+    description: product.description,
+    price: product.price,
+    image: product.image,
+    email: user,
+  };
+  cart.push(product_cart);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  console.log("added");
+  document.getElementById("success-message").style.display = "flex";
 }
-// Handle navigation bar
 
-if(localStorage.getItem('user_email') === null ){
-   document.getElementById('logout').style.display="none"
-  document.getElementById('signup').style.display="flex"
-  document.getElementById('login').style.display="flex"
-
-}else{
-  document.getElementById('logout').style.display="flex"
-
-
-}
+// This is used to hide the success message
+document.getElementById("close").addEventListener("click", () => {
+  document.getElementById("success-message").style.display = "none";
+});

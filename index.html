@@ -11,17 +11,20 @@
         <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
     </head>
     <body>
-  
-        <!-- Message -->
+        <!-- Success Message -->
        <div id="success-message">
-        <section  class="position-fixed d-flex justify-content-center align-items-center text-center bg-opacity-75 bg-dark w-100 z-3" style="height: 100vh;width: 100vh;">
+        <section  class="position-fixed p-5 d-flex justify-content-center align-items-center text-center bg-opacity-75 bg-dark w-100 z-3" style="height: 100vh;width: 100vh;">
             <div id="message-content" class="shadow-lg bg-white p-5 rounded-3">
               <i class="fa-regular fa-circle-check fa-fade fs-1"></i>
               <p class="fw-bold fs-2 py-3">Product is added successfully to the cart </p>
-              <button onclick="goToCart()" class="btn btn-dark">OK</button>
+              <a href="cart.html" class="btn btn-dark">Go to Cart</a>
+              <button class="btn btn-outline-dark" id="close">Continue Shopping</button>
+
             </div>
           </section>
        </div>
+    <!-- End of Success Message -->
+
 
         <!-- First section -->
          <section id="first_section">
@@ -34,16 +37,11 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-<!--                         <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                          </form>  -->
                     </ul>
                     <a href="signup.html" class="btn btn-dark me-2 " id="signup">Sign Up</a>
                     <a href="login.html" class="btn btn-outline-dark" id="login">Login</a>
+                    <a href="cart.html" class="text-decoration-none text-dark fs-3 me-3" id="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
                     <a class="btn btn-dark" id="logout" onclick="logout()">Logout</a>
-
-
                   </div>
                 </div>
               </nav>
@@ -138,30 +136,11 @@
             </div>
 
         </footer>
-        <!--End of Footer-->
-
-
-        
+        <!--End of Footer-->        
         <script src="https://kit.fontawesome.com/0c6829628d.js" crossorigin="anonymous"></script>
         <script src="assets/js/bootstrap.bundle.min.js" async defer></script>
-        <script src="assets/js/Auth.js" async defer></script>
+        <script src="assets/js/Auth.js" async defer type="module"></script>
+        <script src="assets/js/nav.js" async defer></script>
         <script src="assets/js/index.js" async defer type="module"></script>
-        <script src="assets/js/cart.js" async defer type="module"></script>
-
-
-<script>
-    let i;
-    function add(index){
-        document.getElementById('success-message').style.display='flex'
-        i=index;
-    }
-
-    function goToCart(){
-        document.getElementById('success-message').style.display='none'
-        window.location.assign(`cart.html?${i}`)
-    }
-
-</script>
-
     </body>
 </html>

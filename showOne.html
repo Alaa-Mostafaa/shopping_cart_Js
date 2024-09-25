@@ -8,46 +8,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
   </head>
   <body>
-    <!-- Navigation bar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand fs-1" href="#">SHOP.CO</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Products</a>
-            </li>
-          </ul>
-          <!--                     <form class="d-flex" role="search">
-                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form> -->
-        </div>
-      </div>
-    </nav>
-    <!-- End of Navigation bar -->
+ <!-- Navigation bar -->
+ <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand fs-1" href="index.html">SHOP.CO</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+
+      </ul>
+      <a href="signup.html" class="btn btn-dark me-2">Sign Up</a>
+      <a href="login.html" class="btn btn-outline-dark">Login</a>
+      <a href="cart.html" class="text-decoration-none text-dark fs-3 me-3" id="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+
+      <a class="btn btn-dark d-none">Logout</a>
+    </div>
+  </div>
+</nav>
+<!-- End of Navigation bar -->
 
     <!-- Show one section -->
     <section class="container my-5">
       <div class="row" id="product"></div>
     </section>
 
+    <!-- Error Message ( If the user is asked to show a product that does not exist in the products ) -->
     <div id="error" >
     <div class="d-flex justify-content-center align-items-center text-center  w-100" style="height: 60vh;">
       <div>
@@ -56,15 +54,79 @@
       </div>
     </div>
     </div>
+    <!-- Error Message ( If the user is asked to show a product that does not exist in the products ) -->
+
     <!-- End of Show one section -->
+
+
+            <!--Footer-->
+            <footer>
+              <div class="container py-5">
+                  <div class="row pt-4 gy-5">
+                      <div class="col-md-4 col-sm-12">
+                          <h1>SHOP.CO</h1>
+                          <p class="text-muted py-3 lh-lg">We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
+                          <div id="social_media_icons">
+                              <i class="fa-brands fa-twitter bg-white p-2 rounded-5"></i>
+                              <i class="fa-brands fa-facebook-f bg-white p-2 rounded-5 mx-1"></i>
+                              <i class="fa-brands fa-instagram bg-white p-2 rounded-5"></i>
+                              <i class="fa-brands fa-github bg-white p-2 rounded-5 ms-1"></i>
+                          </div>
+                      </div>
+                      <div class="col-md-2 col-sm-12 ">
+                          <h4>COMPANY</h4>
+                          <ul class="list-unstyled text-muted mt-4">
+                              <li>About</li>
+                              <li class="py-4">Features</li>
+                              <li>Works</li>
+                              <li class="py-4">Career</li>
+                          </ul>
+                      </div>
+                      <div class="col-md-2 col-sm-12 ">
+                          <h4>HELP</h4>
+                          <ul class="list-unstyled text-muted mt-4">
+                              <li>Customer Support</li>
+                              <li class="py-4">Delivery Details</li>
+                              <li>Terms & Conditions</li>
+                              <li class="py-4">Privacy Policy</li>
+                          </ul>
+                      </div>
+  
+                      <div class="col-md-2 col-sm-12 ">
+                          <h4>FAQ</h4>
+                          <ul class="list-unstyled text-muted mt-4">
+                              <li>Account</li>
+                              <li class="py-4">Manage Delieveries</li>
+                              <li>Orders</li>
+                              <li class="py-4">Payments</li>
+                          </ul>
+                      </div>
+  
+                      <div class="col-md-2 col-sm-12 ">
+                          <h4>RESOURCES</h4>
+                          <ul class="list-unstyled text-muted mt-4">
+                              <li>Free eBooks</li>
+                              <li class="py-4">Development Tutorial</li>
+                              <li>How to - Blog</li>
+                              <li class="py-4">Youtube Playlist</li>
+                          </ul>
+                      </div>
+  
+                  </div>
+              </div>
+  
+          </footer>
+          <!--End of Footer-->
 
     <script
       src="https://kit.fontawesome.com/0c6829628d.js"
       crossorigin="anonymous"
     ></script>
     <script src="assets/js/bootstrap.bundle.min.js" async defer></script>
+    <script src="assets/js/nav.js" async defer></script>
+
     <script>
-      // Show one product
+      // Show one product ( Get the index of the product from the array of all products and show it )
       function showOne() {
         let products = localStorage.getItem("products");
         products=JSON.parse(products)
@@ -86,7 +148,6 @@
                               <h2>${product.Productname}</h2>
                               <p class="py-4 text-muted lh-lg">${product.description}</p>
                               <p class="pb-3">${product.price} EGP</p>
-                              <a href="#" class="btn btn-dark"><i class="fa-solid fa-cart-shopping pe-2"></i> Add to Cart </a>   
                           </div>
                           </div>
      `;
@@ -96,8 +157,8 @@
 
         }
       }
-
       showOne();
+    // End of Show one product ( Get the index of the product from the array of all products and show it )
     </script>
   </body>
 </html>

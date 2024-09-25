@@ -33,8 +33,9 @@
     border: none;
 }
 
-#error,#signup,#login,#logout,#success-message{
+#error,#signup,#login,#logout,#success-message,#empty,#cart-icon{
     display: none;
+    transition: all 2s;
 }
 
 

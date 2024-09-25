@@ -1,4 +1,4 @@
-#name-error , #email-error,#password-error, #login_em,#login_pass,#account_isnotExist,#signUp_account{
+#name-error , #email-error,#password-error, #login_em,#login_pass,#account_isnotExist,#signUp_account,#login_message{
     display: none;
 }
 
